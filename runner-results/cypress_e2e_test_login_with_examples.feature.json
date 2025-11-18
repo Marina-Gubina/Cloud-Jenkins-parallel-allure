@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 2,
+  "passes": 2,
+  "pending": 0,
+  "failures": 0,
+  "start": "2025-11-17T16:04:05.050Z",
+  "duration": 13780,
+  "file": "cypress\\e2e\\test\\login_with_examples.feature"
+}

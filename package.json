@@ -1,0 +1,32 @@
+{
+  "name": "cloud-jenkins-parallel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "npx cypress open",
+    "cy:run": "cypress run",
+    
+    "cy:run:cloud": "npx cypress run --record --key 58d92820-1b57-4d35-81ed-525edaa8616d",
+    "cy:run:nokey:create_box": "npx cypress run --spec 'cypress/e2e/test/create_box.feature'",
+    "cy:run:nokey:login_as_string": "npx cypress run --spec 'cypress/e2e/test/login_as_string.feature'",
+    "cy:run:create_box": "npx cypress run --spec 'cypress/e2e/test/create_box.feature' --record --key 58d92820-1b57-4d35-81ed-525edaa8616d",
+    "cy:run:login_as_string": "npx cypress run --spec 'cypress/e2e/test/login_as_string.feature' --record --key 58d92820-1b57-4d35-81ed-525edaa8616d",
+    "cy:nokey:parallel": "cypress-parallel -s cy:run -t 2 -d 'cypress/e2e/test'",
+    "cy:parallel": "cypress-parallel -s cy:run -t 2 -d 'cypress/e2e/test' -a '\"--record --key 58d92820-1b57-4d35-81ed-525edaa8616d\"'"
+    
+
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.7",
+    "@faker-js/faker": "^10.1.0",
+    "cypress": "^15.6.0",
+    "esbuild": "^0.27.0"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^23.2.1",
+    "cypress-parallel": "^0.15.0"
+  }
+}
