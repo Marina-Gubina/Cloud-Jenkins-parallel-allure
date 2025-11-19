@@ -6,22 +6,24 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "cypress run",
-    
     "cy:run:cloud": "npx cypress run --record --key 58d92820-1b57-4d35-81ed-525edaa8616d",
     "cy:run:nokey:create_box": "npx cypress run --spec 'cypress/e2e/test/create_box.feature'",
     "cy:run:nokey:login_as_string": "npx cypress run --spec 'cypress/e2e/test/login_as_string.feature'",
     "cy:run:create_box": "npx cypress run --spec 'cypress/e2e/test/create_box.feature' --record --key 58d92820-1b57-4d35-81ed-525edaa8616d",
     "cy:run:login_as_string": "npx cypress run --spec 'cypress/e2e/test/login_as_string.feature' --record --key 58d92820-1b57-4d35-81ed-525edaa8616d",
     "cy:nokey:parallel": "cypress-parallel -s cy:run -t 2 -d 'cypress/e2e/test'",
-    "cy:parallel": "cypress-parallel -s cy:run -t 2 -d 'cypress/e2e/test' -a '\"--record --key 58d92820-1b57-4d35-81ed-525edaa8616d\"'"
-    
+    "cy:parallel": "cypress-parallel -s cy:run -t 2 -d 'cypress/e2e/test' -a '\"--record --key 58d92820-1b57-4d35-81ed-525edaa8616d\"'",
 
+     "allure:run": "npx cypress run --env allure=true",
+     "allure_report_generate": "npx allure generate allure-results",
+     "allure_report_open": "npx allure open allure-report"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.7",
     "@faker-js/faker": "^10.1.0",
+    "@shelex/cypress-allure-plugin": "^2.41.2",
     "cypress": "^15.6.0",
     "esbuild": "^0.27.0"
   },
